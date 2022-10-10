@@ -7,6 +7,8 @@
  * relevant readings for each task.
  */
 
+import java.util.ArrayList;
+
 /**
  *  1. In Java, no code can exist outside of a class. Unlike Python which uses
  *    functions, all code in Java uses methods.
@@ -43,6 +45,7 @@ public class Basics {
         /* TODO (Task 1): Write a line of code below that prints the string
          *                Hello World!
          */
+        System.out.println("Hello World");
 
 
 
@@ -69,6 +72,7 @@ public class Basics {
          * you should see the message "my_variable's value is 100" if you run
          * this file!
          */
+        int my_variable = 100;
         System.out.println("my_variable's value is " + my_variable);
 
         /* 5. In Python, we could write a loop that iterates using:
@@ -99,6 +103,9 @@ public class Basics {
          * Current count: 1
          * Current count: 0
          */
+        for (int i = 10; i > 0; i--){
+            System.out.println("Current count: " + i);
+        }
 
 
     }
@@ -141,11 +148,13 @@ public class Basics {
          *                you may use them if you wish.
          */
         StringBuilder ret = new StringBuilder();
-
-        // Fill in the rest of the body here
-
+        String[] a = to_split.split(" ", 7);
+        for (int i = 0; i <= 7; i++){
+            ret.append(a[i].charAt(0));
+        }
         return ret.toString();
     }
+
 
     /**
      * 7. Below is a method that takes in an integer array (similar to a list
@@ -163,6 +172,10 @@ public class Basics {
      */
     public static int oddSum(int[] arr) {
         int current_sum = 0;
+        int length = arr.length;
+        for (int i = 1; i <= length; i += 2){
+            current_sum = current_sum + arr[i];
+        }
 
         /* TODO (Task 5): Complete this method body using a for-loop.
          *                You can find the length of an array by using the
